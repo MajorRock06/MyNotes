@@ -27,4 +27,14 @@ A 'string' is a sequence of characters, like ""Hello World"", ""I am a string"",
 A 'float' is a decimal number, like 1.234, 5.678, and 9.101112. 
 A 'bool' is a true or false value, like true and false. ";
 
+public static string DatatypesPageOne =
+@"there is diffrent datatypes";
+
+
+public static string DatatypesPageTwo =
+@"there is diffrent datatypes";
 }
+
+
+
+
