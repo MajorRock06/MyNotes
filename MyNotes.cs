@@ -1,14 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
 public class MyNotes
 {
-    // En simpel datastruktur til at opbevare sideindhold baseret på nøgler
     private static Dictionary<string, string> pageContents = new Dictionary<string, string>();
 
     static MyNotes()
     {
-        // Tilføj sideindhold til dictionary baseret på nøgler
-        pageContents["VariablesPage1"] = "Dette er side 1 af kapitel om variabler.";
-        pageContents["VariablesPage2"] = "Dette er side 2 af kapitel om variabler.";
-        // Tilføj sideindhold for de andre nøgler...
+        // Sti til mappen med .txt-filer
+        string folderPath = "Pages";
+
+        // Liste over de ønskede sideindholdsnøgler (filnavne uden .txt-udvidelsen)
+        string[] pageContentKeys = { "VariablesPage1", "VariablesPage2" }; // Tilpas dette efter behov
+
+        foreach (string pageContentKey in pageContentKeys)
+        {
+            string filePath = Path.Combine(folderPath, $"{pageContentKey}.txt");
+
+            if (File.Exists(filePath))
+            {
+                string content = File.ReadAllText(filePath);
+                pageContents[pageContentKey] = content;
+            }
+            else
+            {
+                pageContents[pageContentKey] = "Sideindhold ikke fundet.";
+            }
+        }
     }
 
     public static void Main()
@@ -20,7 +39,6 @@ public class MyNotes
 
     public static string GetPageContent(string pageContentKey)
     {
-        // Simpel implementering: Hent sideindhold fra dictionary
         if (pageContents.ContainsKey(pageContentKey))
         {
             return pageContents[pageContentKey];
@@ -31,8 +49,3 @@ public class MyNotes
         }
     }
 }
-
-
-
-
-
