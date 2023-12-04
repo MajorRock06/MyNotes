@@ -12,7 +12,7 @@ public class MyNotes
         string folderPath = "Pages";
 
         // Liste over de ønskede sideindholdsnøgler (filnavne uden .txt-udvidelsen)
-        string[] pageContentKeys = { "VariablesPage1", "VariablesPage2" }; // Tilpas dette efter behov
+        string[] pageContentKeys = { "VariablesPage1", "DatatypesPage1" };
 
         foreach (string pageContentKey in pageContentKeys)
         {
@@ -28,13 +28,6 @@ public class MyNotes
                 pageContents[pageContentKey] = "Sideindhold ikke fundet.";
             }
         }
-    }
-
-    public static void Main()
-    {
-        // Test af GetPageContent
-        string content = GetPageContent("VariablesPage1");
-        Console.WriteLine(content);
     }
 
     public static string GetPageContent(string pageContentKey)

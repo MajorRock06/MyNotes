@@ -1,6 +1,6 @@
 ﻿// Kapitler
 string[] chapterTitles = { "Variables", "Datatypes", "Conditionals", "Arrays", "Loops", "Methods", "Classes", "Constructors", "Fields", "Syntax" };
-int numPagesPerChapter = 2;
+int numPagesPerChapter = 1;
 
 List<Chapter> chapters = new List<Chapter>();
 
